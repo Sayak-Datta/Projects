@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="spotify.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="Brand"><img src="logo.png" alt="Spotify">Spotify</li>
+            <li>Home</li>
+            <li>About</li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="songList">
+            <h1>Best of NCS-No Copyright Sounds</h1>
+            <div class="songItemContainer">
+                <div class="songitem">
+                    <img src="covers/1.jpg" alt="1">
+                    <span class="songName">Warriyo - Mortals [NCS Release]</span>
+                    <span class="songlistPlay">
+                        <span class="Timestamp">05:34 <i class="fa-regular songItemPlay fa-circle-play"></i></span>
+                    </span>
+                </div>
+                <div class="songitem">
+                    <img src="covers/1.jpg" alt="1">
+                    <span class="songName">Warriyo - Mortals [NCS Release]</span>
+                    <span class="songlistPlay">
+                        <span class="Timestamp">05:34 <i class="fa-regular songItemPlay fa-circle-play"></i></span>
+                    </span>
+                </div>
+                <div class="songitem">
+                    <img src="covers/1.jpg" alt="1">
+                    <span class="songName">Warriyo - Mortals [NCS Release]</span>
+                    <span class="songlistPlay">
+                        <span class="Timestamp">05:34 <i class="fa-regular songItemPlay fa-circle-play"></i></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="songbanner"></div>
+    </div>
+    <div class="bottom">
+        <input type="range" name="range" id="myProgressBar" min="0" max="100">
+        <div class="icons">
+            <i class="fa-solid fa-backward-step fa-3x" id="previous"></i>
+            <i class="fa-regular fa-circle-play fa-3x" id="masterPlay"></i>
+            <i class="fa-solid fa-forward-step fa-3x" id="next"></i>
+        </div>
+        <div class="songInfo">
+            <img src="covers/playing.gif" width="42px" id="gif"><span id="songInfo">Warriyo - Mortals [NCS Release]</span>
+        </div>
+    </div>
+
+    <script src="spotify.js"></script>
+    <script src="https://kit.fontawesome.com/f59889c674.js" crossorigin="anonymous"></script>
+</body>
+</html>
