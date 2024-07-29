@@ -1,6 +1,5 @@
 console.log("Welcome to Spotify");
 
-// Initialize the Variables
 let songIndex = 0;
 let audioElement = new Audio('songs/1.mp3');
 let masterPlay = document.getElementById('masterPlay');
@@ -17,13 +16,12 @@ let songs = [
     {songName: "Janji-Heroes-Tonight-feat-Johnning-NCS-Release", filePath: "songs/5.mp3", coverPath: "covers/5.jpg"},
 ];
 
-// Update song items with the respective details
 songItems.forEach((element, i) => { 
     element.querySelector("img").src = songs[i].coverPath; 
     element.querySelector(".songName").innerText = songs[i].songName; 
 });
 
-// Handle play/pause click
+
 masterPlay.addEventListener('click', () => {
     if (audioElement.paused || audioElement.currentTime <= 0) {
         audioElement.play();
@@ -38,9 +36,7 @@ masterPlay.addEventListener('click', () => {
     }
 });
 
-// Listen to Events
 audioElement.addEventListener('timeupdate', () => {
-    // Update Seekbar
     let progress = parseInt((audioElement.currentTime / audioElement.duration) * 100); 
     myProgressBar.value = progress;
 });
@@ -49,7 +45,6 @@ myProgressBar.addEventListener('change', () => {
     audioElement.currentTime = myProgressBar.value * audioElement.duration / 100;
 });
 
-// Function to make all song items play buttons
 const makeAllPlays = () => {
     Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) => {
         element.classList.remove('fa-circle-pause');
@@ -57,7 +52,6 @@ const makeAllPlays = () => {
     });
 };
 
-// Play specific song on item click
 Array.from(document.getElementsByClassName('songItemPlay')).forEach((element, i) => {
     element.addEventListener('click', (e) => {
         makeAllPlays();
@@ -74,7 +68,6 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element, i)
     });
 });
 
-// Next song
 document.getElementById('next').addEventListener('click', () => {
     if (songIndex >= songs.length - 1) {
         songIndex = 0;
@@ -89,7 +82,6 @@ document.getElementById('next').addEventListener('click', () => {
     masterPlay.classList.add('fa-circle-pause');
 });
 
-// Previous song
 document.getElementById('previous').addEventListener('click', () => {
     if (songIndex <= 0) {
         songIndex = songs.length - 1;
